@@ -10,9 +10,38 @@ import UIKit
 
 class EmployeeListVC: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = AppConstants.appTitle
+        
+    }
+    
+    @IBAction func sortButtonAction(_ sender: Any) {
+        
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension EmployeeListVC : UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: AppConstants.employeeCellIdentifier, for: indexPath) as! EmployeeListCell
+        cell.nameLabel.text = "NIkhil"
+        cell.profileImageView.backgroundColor = .red
+        return cell
+    }
+    
+    
+}
+
+extension EmployeeListVC : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: AppConstants.employeeDetailVCIdentifier) as! EmployeeDetailVC
+        self.present(detailVC, animated: true, completion: nil)
     }
 }

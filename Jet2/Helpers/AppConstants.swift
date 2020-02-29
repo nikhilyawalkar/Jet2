@@ -8,6 +8,9 @@
 
 import Foundation
 
-class AppConstants {
-    
+struct AppConstants {
+    static let appTitle = "Jet2"
+    static let employeeListVCIdentifier = "EmployeeListVC"
+    static let employeeDetailVCIdentifier = "EmployeeDetailVC"
+    static let employeeCellIdentifier = "EmployeeListCell"
 }
