@@ -16,6 +16,30 @@
 		6391A6AC240AB45B00BDE741 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6391A6AA240AB45B00BDE741 /* LaunchScreen.storyboard */; };
 		6391A6B7240AB45B00BDE741 /* Jet2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6B6240AB45B00BDE741 /* Jet2Tests.swift */; };
 		6391A6C2240AB45B00BDE741 /* Jet2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6C1240AB45B00BDE741 /* Jet2UITests.swift */; };
+		6391A6D6240ABE6A00BDE741 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6D5240ABE6A00BDE741 /* EmployeeListVC.swift */; };
+		6391A6D7240ABE6A00BDE741 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6D5240ABE6A00BDE741 /* EmployeeListVC.swift */; };
+		6391A6D8240ABE6A00BDE741 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6D5240ABE6A00BDE741 /* EmployeeListVC.swift */; };
+		6391A6DA240ABE7C00BDE741 /* EmployeeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6D9240ABE7C00BDE741 /* EmployeeDetailVC.swift */; };
+		6391A6DB240ABE7C00BDE741 /* EmployeeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6D9240ABE7C00BDE741 /* EmployeeDetailVC.swift */; };
+		6391A6DC240ABE7C00BDE741 /* EmployeeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6D9240ABE7C00BDE741 /* EmployeeDetailVC.swift */; };
+		6391A6DE240AC05400BDE741 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6DD240AC05400BDE741 /* Employee.swift */; };
+		6391A6DF240AC05400BDE741 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6DD240AC05400BDE741 /* Employee.swift */; };
+		6391A6E0240AC05400BDE741 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6DD240AC05400BDE741 /* Employee.swift */; };
+		6391A6E2240AC0EA00BDE741 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6E1240AC0EA00BDE741 /* NetworkManager.swift */; };
+		6391A6E3240AC0EA00BDE741 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6E1240AC0EA00BDE741 /* NetworkManager.swift */; };
+		6391A6E4240AC0EA00BDE741 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6E1240AC0EA00BDE741 /* NetworkManager.swift */; };
+		6391A6E6240AC0FC00BDE741 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6E5240AC0FC00BDE741 /* APIConstants.swift */; };
+		6391A6E7240AC0FC00BDE741 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6E5240AC0FC00BDE741 /* APIConstants.swift */; };
+		6391A6E8240AC0FC00BDE741 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6E5240AC0FC00BDE741 /* APIConstants.swift */; };
+		6391A6EA240AC15F00BDE741 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6E9240AC15F00BDE741 /* CoreDataManager.swift */; };
+		6391A6EB240AC15F00BDE741 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6E9240AC15F00BDE741 /* CoreDataManager.swift */; };
+		6391A6EC240AC15F00BDE741 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6E9240AC15F00BDE741 /* CoreDataManager.swift */; };
+		6391A6EE240AC26500BDE741 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6ED240AC26500BDE741 /* Utility.swift */; };
+		6391A6EF240AC26500BDE741 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6ED240AC26500BDE741 /* Utility.swift */; };
+		6391A6F0240AC26500BDE741 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6ED240AC26500BDE741 /* Utility.swift */; };
+		6391A6F2240AC27900BDE741 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6F1240AC27900BDE741 /* AppConstants.swift */; };
+		6391A6F3240AC27900BDE741 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6F1240AC27900BDE741 /* AppConstants.swift */; };
+		6391A6F4240AC27900BDE741 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A6F1240AC27900BDE741 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +75,14 @@
 		6391A6BD240AB45B00BDE741 /* Jet2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Jet2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6391A6C1240AB45B00BDE741 /* Jet2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jet2UITests.swift; sourceTree = "<group>"; };
 		6391A6C3240AB45B00BDE741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6391A6D5240ABE6A00BDE741 /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
+		6391A6D9240ABE7C00BDE741 /* EmployeeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailVC.swift; sourceTree = "<group>"; };
+		6391A6DD240AC05400BDE741 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		6391A6E1240AC0EA00BDE741 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6391A6E5240AC0FC00BDE741 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		6391A6E9240AC15F00BDE741 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		6391A6ED240AC26500BDE741 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		6391A6F1240AC27900BDE741 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +133,15 @@
 		6391A69B240AB45800BDE741 /* Jet2 */ = {
 			isa = PBXGroup;
 			children = (
+				6391A6D4240AB57700BDE741 /* Helpers */,
+				6391A6D3240AB51F00BDE741 /* Network */,
+				6391A6D2240AB50B00BDE741 /* CoreData */,
+				6391A6D1240AB4FF00BDE741 /* Model */,
+				6391A6D0240AB4E900BDE741 /* ViewModel */,
+				6391A6CF240AB4DA00BDE741 /* View */,
 				6391A69C240AB45800BDE741 /* AppDelegate.swift */,
 				6391A69E240AB45800BDE741 /* SceneDelegate.swift */,
 				6391A6A0240AB45800BDE741 /* ViewController.swift */,
-				6391A6A2240AB45800BDE741 /* Main.storyboard */,
 				6391A6A8240AB45B00BDE741 /* Assets.xcassets */,
 				6391A6AA240AB45B00BDE741 /* LaunchScreen.storyboard */,
 				6391A6AD240AB45B00BDE741 /* Info.plist */,
@@ -129,6 +166,65 @@
 				6391A6C3240AB45B00BDE741 /* Info.plist */,
 			);
 			path = Jet2UITests;
+			sourceTree = "<group>";
+		};
+		6391A6CF240AB4DA00BDE741 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6391A6F6240AC39500BDE741 /* UserInterface */,
+				6391A6D5240ABE6A00BDE741 /* EmployeeListVC.swift */,
+				6391A6D9240ABE7C00BDE741 /* EmployeeDetailVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6391A6D0240AB4E900BDE741 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6391A6D1240AB4FF00BDE741 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6391A6DD240AC05400BDE741 /* Employee.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6391A6D2240AB50B00BDE741 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6391A6E9240AC15F00BDE741 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		6391A6D3240AB51F00BDE741 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6391A6E1240AC0EA00BDE741 /* NetworkManager.swift */,
+				6391A6E5240AC0FC00BDE741 /* APIConstants.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6391A6D4240AB57700BDE741 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6391A6ED240AC26500BDE741 /* Utility.swift */,
+				6391A6F1240AC27900BDE741 /* AppConstants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6391A6F6240AC39500BDE741 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				6391A6A2240AB45800BDE741 /* Main.storyboard */,
+			);
+			path = UserInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,7 +360,15 @@
 			files = (
 				6391A6A1240AB45800BDE741 /* ViewController.swift in Sources */,
 				6391A69D240AB45800BDE741 /* AppDelegate.swift in Sources */,
+				6391A6D6240ABE6A00BDE741 /* EmployeeListVC.swift in Sources */,
+				6391A6EE240AC26500BDE741 /* Utility.swift in Sources */,
+				6391A6DE240AC05400BDE741 /* Employee.swift in Sources */,
+				6391A6E2240AC0EA00BDE741 /* NetworkManager.swift in Sources */,
+				6391A6E6240AC0FC00BDE741 /* APIConstants.swift in Sources */,
+				6391A6F2240AC27900BDE741 /* AppConstants.swift in Sources */,
+				6391A6DA240ABE7C00BDE741 /* EmployeeDetailVC.swift in Sources */,
 				6391A6A7240AB45800BDE741 /* Jet2.xcdatamodeld in Sources */,
+				6391A6EA240AC15F00BDE741 /* CoreDataManager.swift in Sources */,
 				6391A69F240AB45800BDE741 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +377,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6391A6DB240ABE7C00BDE741 /* EmployeeDetailVC.swift in Sources */,
+				6391A6F3240AC27900BDE741 /* AppConstants.swift in Sources */,
+				6391A6DF240AC05400BDE741 /* Employee.swift in Sources */,
+				6391A6E7240AC0FC00BDE741 /* APIConstants.swift in Sources */,
+				6391A6E3240AC0EA00BDE741 /* NetworkManager.swift in Sources */,
+				6391A6EF240AC26500BDE741 /* Utility.swift in Sources */,
+				6391A6D7240ABE6A00BDE741 /* EmployeeListVC.swift in Sources */,
+				6391A6EB240AC15F00BDE741 /* CoreDataManager.swift in Sources */,
 				6391A6B7240AB45B00BDE741 /* Jet2Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +393,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6391A6DC240ABE7C00BDE741 /* EmployeeDetailVC.swift in Sources */,
+				6391A6F4240AC27900BDE741 /* AppConstants.swift in Sources */,
+				6391A6E0240AC05400BDE741 /* Employee.swift in Sources */,
+				6391A6E8240AC0FC00BDE741 /* APIConstants.swift in Sources */,
+				6391A6E4240AC0EA00BDE741 /* NetworkManager.swift in Sources */,
+				6391A6F0240AC26500BDE741 /* Utility.swift in Sources */,
+				6391A6D8240ABE6A00BDE741 /* EmployeeListVC.swift in Sources */,
+				6391A6EC240AC15F00BDE741 /* CoreDataManager.swift in Sources */,
 				6391A6C2240AB45B00BDE741 /* Jet2UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27C4GFY9UN;
 				INFOPLIST_FILE = Jet2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27C4GFY9UN;
 				INFOPLIST_FILE = Jet2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,7 +600,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27C4GFY9UN;
 				INFOPLIST_FILE = Jet2Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,7 +622,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27C4GFY9UN;
 				INFOPLIST_FILE = Jet2Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,6 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27C4GFY9UN;
 				INFOPLIST_FILE = Jet2UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -541,6 +664,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27C4GFY9UN;
 				INFOPLIST_FILE = Jet2UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
