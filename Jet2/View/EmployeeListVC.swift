@@ -16,7 +16,8 @@ class EmployeeListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = AppConstants.appTitle
-        viewModel.fetchEmployeeData {
+        viewModel.fetchEmployeeData()
+        viewModel.dataChanged = {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -24,7 +25,50 @@ class EmployeeListVC: UIViewController {
     }
     
     @IBAction func sortButtonAction(_ sender: Any) {
+        openSortingOption()
+    }
+    
+    func openSortingOption(){
+        let alertController = UIAlertController(title: "Sort", message: nil, preferredStyle: .actionSheet)
+        let sortNameAscAction = UIAlertAction(title: "Name  : A -> Z", style: .default, handler: { (action) in
+            self.viewModel.sortingOption = .nameAsc
+        })
+        if viewModel.sortingOption == .nameAsc {
+            sortNameAscAction.setValue(true, forKey: "checked")
+        }
         
+        let sortNameDscAction = UIAlertAction(title: "Name  : Z -> A", style: .default, handler: { (action) in
+            self.viewModel.sortingOption = .nameDsc
+        })
+        if viewModel.sortingOption == .nameDsc {
+            sortNameDscAction.setValue(true, forKey: "checked")
+        }
+        
+        let sortAgeAscAction = UIAlertAction(title: "Age  : 1 -> 99", style: .default, handler: { (action) in
+            self.viewModel.sortingOption = .ageAsc
+        })
+        if viewModel.sortingOption == .ageAsc {
+            sortAgeAscAction.setValue(true, forKey: "checked")
+        }
+        
+        let sortAgeDscAction = UIAlertAction(title: "Age  : 99 -> A", style: .default, handler: { (action) in
+            self.viewModel.sortingOption = .ageDsc
+        })
+        if viewModel.sortingOption == .ageDsc {
+            sortAgeDscAction.setValue(true, forKey: "checked")
+        }
+       
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+            
+        })
+        
+        alertController.addAction(sortNameAscAction)
+        alertController.addAction(sortNameDscAction)
+        alertController.addAction(sortAgeAscAction)
+        alertController.addAction(sortAgeDscAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true)
     }
 }
 

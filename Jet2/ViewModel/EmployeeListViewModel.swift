@@ -9,23 +9,64 @@
 import Foundation
 import UIKit
 
+enum SortingOption {
+    case nameAsc
+    case nameDsc
+    case ageAsc
+    case ageDsc
+}
+
 class EmployeeListViewModel{
     
     var employees : [Employee] = []
-    
     let networkManager = NetworkManager()
     
-    func fetchEmployeeData(dataChanged : @escaping ()->Void){
+    var sortingOption : SortingOption = .nameAsc{
+        didSet{
+            sortData()
+        }
+    }
+    
+    var dataChanged : (()->Void)?
+    
+    func fetchEmployeeData(){
         networkManager.fetchEmployeeData { (result) in
             switch result{
             case .success(let data):
                 self.employees = data ?? []
-                dataChanged()
+                self.sortData()
             case.error(let error):
                 print(error!)
             }
             
         }
+    }
+    
+    func sortData(){
+        switch self.sortingOption {
+        case .nameAsc:
+            self.employees.sort(by: {$0.name ?? "" < $1.name ?? ""})
+            
+        case .nameDsc:
+            self.employees.sort(by: {$0.name ?? "" > $1.name ?? ""})
+            
+        case .ageAsc:
+            self.employees.sort(by: {
+                guard let first: Int = Int($0.age ?? "-1") else { return false }
+                guard let second: Int = Int($1.age ?? "-1") else { return false }
+                
+                return first < second
+            })
+            
+        case .ageDsc:
+            self.employees.sort(by: {
+                guard let first: Int = Int($0.age ?? "-1") else { return false }
+                guard let second: Int = Int($1.age ?? "-1") else { return false }
+                
+                return first > second
+            })
+        }
+        dataChanged?()
     }
     
     func getItemCount()->Int{
