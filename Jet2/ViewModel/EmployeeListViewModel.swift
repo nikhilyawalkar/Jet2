@@ -82,6 +82,10 @@ class EmployeeListViewModel{
     func getDetailViewModel(forIndex index : Int) -> EmployeeDetailViewModel {
         return EmployeeDetailViewModel(model: employees[index])
     }
+    
+    func performDeleteAction(atIndex indexPath: IndexPath){
+        self.employees.remove(at: indexPath.row)
+    }
 }
 
 class EmployeeCellViewModel{

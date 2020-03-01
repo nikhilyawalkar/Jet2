@@ -15,13 +15,34 @@ class EmployeeListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = AppConstants.appTitle
+        setupNavigationBar()
         viewModel.fetchEmployeeData()
         viewModel.dataChanged = {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    func setupNavigationBar(){
+        self.title = AppConstants.appTitle
+        if !tableView.isEditing{
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonClicked))
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonClicked))
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        }
+    }
+    
+    @objc func editButtonClicked(){
+        tableView.setEditing(true, animated: true)
+        setupNavigationBar()
+    }
+    
+    @objc func doneButtonClicked(){
+        tableView.setEditing(false, animated: true)
+        setupNavigationBar()
     }
     
     @IBAction func sortButtonAction(_ sender: Any) {
@@ -90,5 +111,12 @@ extension EmployeeListVC : UITableViewDelegate{
         let detailVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: AppConstants.employeeDetailVCIdentifier) as! EmployeeDetailVC
         detailVC.viewModel = viewModel.getDetailViewModel(forIndex: indexPath.row)
         self.present(detailVC, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            viewModel.performDeleteAction(atIndex: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
 }
