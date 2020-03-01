@@ -34,6 +34,7 @@ class EmployeeListViewModel{
             switch result{
             case .success(let data):
                 self.employees = data ?? []
+                CoreDataManager._shared.saveEmployeeDataToDatabase(dataForSaving: self.employees)
                 self.sortData()
             case.error(let error):
                 print(error!)
