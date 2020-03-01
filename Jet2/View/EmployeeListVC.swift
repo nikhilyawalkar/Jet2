@@ -11,11 +11,16 @@ import UIKit
 class EmployeeListVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    let viewModel = EmployeeListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = AppConstants.appTitle
-        
+        viewModel.fetchEmployeeData {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @IBAction func sortButtonAction(_ sender: Any) {
@@ -25,17 +30,15 @@ class EmployeeListVC: UIViewController {
 
 extension EmployeeListVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.getItemCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AppConstants.employeeCellIdentifier, for: indexPath) as! EmployeeListCell
-        cell.nameLabel.text = "NIkhil"
+        viewModel.configureCell(cell: cell, atIndex: indexPath.row)
         cell.profileImageView.backgroundColor = .red
         return cell
-    }
-    
-    
+    } 
 }
 
 extension EmployeeListVC : UITableViewDelegate{

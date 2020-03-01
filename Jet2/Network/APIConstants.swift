@@ -8,6 +8,13 @@
 
 import Foundation
 
-class APIConstants{
+struct APIConstants{
     
+    private static let baseUrl = "https://dummy.restapiexample.com"
+    
+    private static let emplyeeList = "/api/v1/employees"
+    
+    struct DEV {
+        static let employeeListUrl = baseUrl + emplyeeList
+    }
 }

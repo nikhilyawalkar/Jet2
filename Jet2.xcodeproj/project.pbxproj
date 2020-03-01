@@ -10,6 +10,9 @@
 		630C9710240ACA8A005D37E7 /* EmployeeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630C970F240ACA8A005D37E7 /* EmployeeListCell.swift */; };
 		630C9711240ACA8A005D37E7 /* EmployeeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630C970F240ACA8A005D37E7 /* EmployeeListCell.swift */; };
 		630C9712240ACA8A005D37E7 /* EmployeeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630C970F240ACA8A005D37E7 /* EmployeeListCell.swift */; };
+		630C9721240B747C005D37E7 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630C9720240B747B005D37E7 /* EmployeeListViewModel.swift */; };
+		630C9722240B747C005D37E7 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630C9720240B747B005D37E7 /* EmployeeListViewModel.swift */; };
+		630C9723240B747C005D37E7 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630C9720240B747B005D37E7 /* EmployeeListViewModel.swift */; };
 		6391A69D240AB45800BDE741 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A69C240AB45800BDE741 /* AppDelegate.swift */; };
 		6391A69F240AB45800BDE741 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A69E240AB45800BDE741 /* SceneDelegate.swift */; };
 		6391A6A4240AB45800BDE741 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6391A6A2240AB45800BDE741 /* Main.storyboard */; };
@@ -63,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		630C970F240ACA8A005D37E7 /* EmployeeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListCell.swift; sourceTree = "<group>"; };
+		630C9720240B747B005D37E7 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
 		6391A699240AB45800BDE741 /* Jet2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jet2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6391A69C240AB45800BDE741 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6391A69E240AB45800BDE741 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 		6391A6D0240AB4E900BDE741 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				630C9720240B747B005D37E7 /* EmployeeListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				6391A6D6240ABE6A00BDE741 /* EmployeeListVC.swift in Sources */,
 				630C9710240ACA8A005D37E7 /* EmployeeListCell.swift in Sources */,
 				6391A6EE240AC26500BDE741 /* Utility.swift in Sources */,
+				630C9721240B747C005D37E7 /* EmployeeListViewModel.swift in Sources */,
 				6391A6DE240AC05400BDE741 /* Employee.swift in Sources */,
 				6391A6E2240AC0EA00BDE741 /* NetworkManager.swift in Sources */,
 				6391A6E6240AC0FC00BDE741 /* APIConstants.swift in Sources */,
@@ -388,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6391A6DB240ABE7C00BDE741 /* EmployeeDetailVC.swift in Sources */,
+				630C9722240B747C005D37E7 /* EmployeeListViewModel.swift in Sources */,
 				6391A6F3240AC27900BDE741 /* AppConstants.swift in Sources */,
 				6391A6DF240AC05400BDE741 /* Employee.swift in Sources */,
 				6391A6E7240AC0FC00BDE741 /* APIConstants.swift in Sources */,
@@ -405,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6391A6DC240ABE7C00BDE741 /* EmployeeDetailVC.swift in Sources */,
+				630C9723240B747C005D37E7 /* EmployeeListViewModel.swift in Sources */,
 				6391A6F4240AC27900BDE741 /* AppConstants.swift in Sources */,
 				6391A6E0240AC05400BDE741 /* Employee.swift in Sources */,
 				6391A6E8240AC0FC00BDE741 /* APIConstants.swift in Sources */,
