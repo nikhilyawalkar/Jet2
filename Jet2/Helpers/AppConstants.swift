@@ -13,4 +13,10 @@ struct AppConstants {
     static let employeeListVCIdentifier = "EmployeeListVC"
     static let employeeDetailVCIdentifier = "EmployeeDetailVC"
     static let employeeCellIdentifier = "EmployeeListCell"
+    
+    //DetailView Constants
+    static let idText = "ID : "
+    static let salaryText = "Salary : "
+    static let ageText = "Age : "
+    static let emptyText = "######"
 }

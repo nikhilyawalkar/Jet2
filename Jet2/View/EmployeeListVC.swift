@@ -36,7 +36,6 @@ extension EmployeeListVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AppConstants.employeeCellIdentifier, for: indexPath) as! EmployeeListCell
         viewModel.configureCell(cell: cell, atIndex: indexPath.row)
-        cell.profileImageView.backgroundColor = .red
         return cell
     } 
 }
@@ -45,6 +44,7 @@ extension EmployeeListVC : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let detailVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: AppConstants.employeeDetailVCIdentifier) as! EmployeeDetailVC
+        detailVC.viewModel = viewModel.getDetailViewModel(forIndex: indexPath.row)
         self.present(detailVC, animated: true, completion: nil)
     }
 }

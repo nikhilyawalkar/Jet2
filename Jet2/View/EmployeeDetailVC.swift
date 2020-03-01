@@ -10,9 +10,24 @@ import UIKit
 
 class EmployeeDetailVC: UIViewController {
 
+    var viewModel : EmployeeDetailViewModel?
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var salaryLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureView()
+    }
+    
+    func configureView(){
+        profileImageView.image = viewModel?.profileImage
+        nameLabel.text = viewModel?.name
+        salaryLabel.text = viewModel?.salary
+        ageLabel.text = viewModel?.age
+        idLabel.text = viewModel?.id
     }
 }

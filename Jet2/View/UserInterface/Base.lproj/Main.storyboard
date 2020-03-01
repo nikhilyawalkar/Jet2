@@ -162,6 +162,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2kD-4m-cT4"/>
                     </view>
+                    <connections>
+                        <outlet property="ageLabel" destination="VW0-NH-70z" id="q61-Ti-QkC"/>
+                        <outlet property="idLabel" destination="Xo2-BC-QPT" id="eyy-2H-CFH"/>
+                        <outlet property="nameLabel" destination="6DW-m7-H0Z" id="rch-DV-Gvt"/>
+                        <outlet property="profileImageView" destination="y5z-fF-Rkz" id="LDA-aE-wSV"/>
+                        <outlet property="salaryLabel" destination="Tul-na-CGQ" id="fW0-bt-1km"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RzO-43-0cP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
