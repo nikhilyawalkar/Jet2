@@ -28,6 +28,8 @@ struct AppConstants {
     static let cancelAction = "Cancel"
     
     static let networkError = "Unable to reach server. Please check your network connection"
+    static let unknownError = "Unknown Error"
+    static let disclaimer = "\nShowing prefetched data."
     
     static let sortTitle = "Sort"
     static let nameSortAsc = "Name  : A -> Z"
@@ -36,4 +38,7 @@ struct AppConstants {
     static let ageSortDsc = "Age  : 99 -> A"
     
     static let actionsheetCheckProperty = "checked"
+    
+    static let emptyStateText = "No Data Found"
+    
 }

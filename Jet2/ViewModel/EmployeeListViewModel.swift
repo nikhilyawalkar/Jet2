@@ -40,17 +40,20 @@ class EmployeeListViewModel{
                     self.employees = CoreDataManager._shared.getEmployeeDataFromDB()
                     self.sortData()
                 case.error(let error):
-                    print(error!)
+                    self.handleError(with: error?.localizedDescription ?? AppConstants.unknownError)
                 }
-                
             }
         } else {
-            self.employees = CoreDataManager._shared.getEmployeeDataFromDB()
-            self.sortData()
-            DispatchQueue.main.async {
-                self.needAlert?(AppConstants.networkError)
-            }
+            handleError(with: AppConstants.networkError)
         }
+    }
+    
+    private func handleError(with errorString : String){
+        DispatchQueue.main.async {
+            self.needAlert?(errorString)
+        }
+        self.employees = CoreDataManager._shared.getEmployeeDataFromDB()
+        self.sortData()
     }
     
     func sortData(){

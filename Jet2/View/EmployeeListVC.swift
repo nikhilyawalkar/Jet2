@@ -10,17 +10,30 @@ import UIKit
 
 class EmployeeListVC: UIViewController {
 
+    @IBOutlet weak var emptyStateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
+    var canShowEmptyState = false {
+        didSet{
+            emptyStateLabel.isHidden = viewModel.getItemCount() <= 0 && canShowEmptyState ? false : true
+        }
+    }
+    
     let viewModel = EmployeeListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        
+        emptyStateLabel.text = AppConstants.emptyStateText
+        emptyStateLabel.isHidden = true
+        
         Loader.shared.showLoading(on: self)
         viewModel.fetchEmployeeData()
         
         viewModel.dataChanged = { [unowned self] in
             DispatchQueue.main.async {
+                self.canShowEmptyState = true
                 self.tableView.reloadData()
                 Loader.shared.stopLoading()
             }
@@ -28,8 +41,9 @@ class EmployeeListVC: UIViewController {
         
         viewModel.needAlert = { message in
             DispatchQueue.main.async {
+                self.canShowEmptyState = true
                 Loader.shared.stopLoading()
-                Utility.showAlert(with: message, on: self)
+                Utility.showAlert(with: self.viewModel.getItemCount() == 0 ? message : message + AppConstants.disclaimer, on: self)
             }
         }
     }
@@ -106,6 +120,7 @@ class EmployeeListVC: UIViewController {
 
 extension EmployeeListVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        emptyStateLabel.isHidden = viewModel.getItemCount() <= 0 && canShowEmptyState ? false : true
         return viewModel.getItemCount()
     }
     
