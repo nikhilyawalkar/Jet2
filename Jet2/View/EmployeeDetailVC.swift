@@ -18,6 +18,7 @@ class EmployeeDetailVC: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,5 +35,16 @@ class EmployeeDetailVC: UIViewController {
         salaryLabel.text = viewModel?.salary
         ageLabel.text = viewModel?.age
         idLabel.text = viewModel?.id
+        
+        if #available(iOS 13.0, *){
+            backButton.isHidden = true
+        }else{
+            backButton.isHidden = false
+        }
+        backButton.layer.cornerRadius = 5
+        backButton.layer.masksToBounds = true
+    }
+    @IBAction func backButtonClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }

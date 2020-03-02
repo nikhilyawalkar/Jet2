@@ -85,6 +85,7 @@ class EmployeeListViewModel{
     func configureCell(cell : EmployeeListCell, atIndex index : Int){
         let cellModel = EmployeeCellViewModel(model : employees[index])
         cell.nameLabel.text = cellModel.name
+        cell.ageLabel.text = cellModel.age
         if let url = URL(string: cellModel.profileUrl ?? ""){
             cell.profileImageView.af.setImage(withURL: url, cacheKey: cellModel.profileUrl, placeholderImage: AppConstants.profilePlaceholder)
         } else {
@@ -114,5 +115,9 @@ class EmployeeCellViewModel{
     
     var profileUrl : String?{
         return model.profileUrl
+    }
+    
+    var age : String?{
+        return model.age
     }
 }

@@ -12,6 +12,7 @@ class EmployeeListCell: UITableViewCell {
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
