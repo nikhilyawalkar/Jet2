@@ -29,7 +29,7 @@ class NetworkManager : NSObject {
     }
     
     func isReachable() -> Bool {
-        NetworkReachabilityManager()!.isReachable
+        return NetworkReachabilityManager()!.isReachable
     }
     
     func fetchEmployeeData(completion: @escaping (Result<[Employee]?, Error?>) -> Void){

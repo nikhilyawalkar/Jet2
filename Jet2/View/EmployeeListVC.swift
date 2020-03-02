@@ -16,10 +16,10 @@ class EmployeeListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        
+        Loader.shared.showLoading(on: self)
         viewModel.fetchEmployeeData()
         
-        viewModel.dataChanged = {
+        viewModel.dataChanged = { [unowned self] in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 Loader.shared.stopLoading()
@@ -27,13 +27,13 @@ class EmployeeListVC: UIViewController {
         }
         
         viewModel.needAlert = { message in
-            Utility.showAlert(with: message, on: self)
+            DispatchQueue.main.async {
+                Loader.shared.stopLoading()
+                Utility.showAlert(with: message, on: self)
+            }
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        Loader.shared.showLoading(on: self)
-    }
     
     func setupNavigationBar(){
         self.title = AppConstants.appTitle

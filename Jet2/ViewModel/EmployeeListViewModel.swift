@@ -28,11 +28,11 @@ class EmployeeListViewModel{
     }
     
     var dataChanged : (()->Void)?
-    var needAlert : ((_ message : String) -> Void)?
+    var needAlert : ((String)->Void)?
     
     func fetchEmployeeData(){
         if NetworkManager._shared.isReachable() {
-            NetworkManager._shared.fetchEmployeeData { (result) in
+            NetworkManager._shared.fetchEmployeeData {[unowned self] (result) in
                 switch result{
                 case .success(let data):
                     let employeeResponse = data ?? []
@@ -45,9 +45,11 @@ class EmployeeListViewModel{
                 
             }
         } else {
-            self.needAlert?(AppConstants.networkError)
             self.employees = CoreDataManager._shared.getEmployeeDataFromDB()
             self.sortData()
+            DispatchQueue.main.async {
+                self.needAlert?(AppConstants.networkError)
+            }
         }
     }
     
