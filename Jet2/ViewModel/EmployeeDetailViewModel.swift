@@ -51,8 +51,4 @@ class EmployeeDetailViewModel{
             return AppConstants.ageText + AppConstants.emptyText
         }
     }
-    
-    var profileImage : UIImage{
-        return UIImage(named: "profile_icon")!
-    }
 }

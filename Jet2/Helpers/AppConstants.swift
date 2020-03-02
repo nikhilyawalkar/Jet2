@@ -22,4 +22,18 @@ struct AppConstants {
     static let emptyText = "######"
     
     static let profilePlaceholder = UIImage(named: "profile_icon")
+    
+    static let alert = "Alert"
+    static let okAction = "Ok"
+    static let cancelAction = "Cancel"
+    
+    static let networkError = "Unable to reach server. Please check your network connection"
+    
+    static let sortTitle = "Sort"
+    static let nameSortAsc = "Name  : A -> Z"
+    static let nameSortDsc = "Name  : Z -> A"
+    static let ageSortAsc = "Age  : 1 -> 99"
+    static let ageSortDsc = "Age  : 99 -> A"
+    
+    static let actionsheetCheckProperty = "checked"
 }

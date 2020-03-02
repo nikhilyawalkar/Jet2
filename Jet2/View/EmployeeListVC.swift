@@ -16,12 +16,23 @@ class EmployeeListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        
         viewModel.fetchEmployeeData()
+        
         viewModel.dataChanged = {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                Loader.shared.stopLoading()
             }
         }
+        
+        viewModel.needAlert = { message in
+            Utility.showAlert(with: message, on: self)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        Loader.shared.showLoading(on: self)
     }
     
     func setupNavigationBar(){
@@ -50,36 +61,36 @@ class EmployeeListVC: UIViewController {
     }
     
     func openSortingOption(){
-        let alertController = UIAlertController(title: "Sort", message: nil, preferredStyle: .actionSheet)
-        let sortNameAscAction = UIAlertAction(title: "Name  : A -> Z", style: .default, handler: { (action) in
+        let alertController = UIAlertController(title: AppConstants.sortTitle, message: nil, preferredStyle: .actionSheet)
+        let sortNameAscAction = UIAlertAction(title: AppConstants.nameSortAsc, style: .default, handler: { (action) in
             self.viewModel.sortingOption = .nameAsc
         })
         if viewModel.sortingOption == .nameAsc {
-            sortNameAscAction.setValue(true, forKey: "checked")
+            sortNameAscAction.setValue(true, forKey: AppConstants.actionsheetCheckProperty)
         }
         
-        let sortNameDscAction = UIAlertAction(title: "Name  : Z -> A", style: .default, handler: { (action) in
+        let sortNameDscAction = UIAlertAction(title: AppConstants.nameSortDsc , style: .default, handler: { (action) in
             self.viewModel.sortingOption = .nameDsc
         })
         if viewModel.sortingOption == .nameDsc {
-            sortNameDscAction.setValue(true, forKey: "checked")
+            sortNameDscAction.setValue(true, forKey: AppConstants.actionsheetCheckProperty)
         }
         
-        let sortAgeAscAction = UIAlertAction(title: "Age  : 1 -> 99", style: .default, handler: { (action) in
+        let sortAgeAscAction = UIAlertAction(title: AppConstants.ageSortAsc, style: .default, handler: { (action) in
             self.viewModel.sortingOption = .ageAsc
         })
         if viewModel.sortingOption == .ageAsc {
-            sortAgeAscAction.setValue(true, forKey: "checked")
+            sortAgeAscAction.setValue(true, forKey: AppConstants.actionsheetCheckProperty)
         }
         
-        let sortAgeDscAction = UIAlertAction(title: "Age  : 99 -> A", style: .default, handler: { (action) in
+        let sortAgeDscAction = UIAlertAction(title: AppConstants.ageSortDsc, style: .default, handler: { (action) in
             self.viewModel.sortingOption = .ageDsc
         })
         if viewModel.sortingOption == .ageDsc {
-            sortAgeDscAction.setValue(true, forKey: "checked")
+            sortAgeDscAction.setValue(true, forKey: AppConstants.actionsheetCheckProperty)
         }
        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+        let cancelAction = UIAlertAction(title: AppConstants.cancelAction, style: .cancel, handler: { (action) in
             
         })
         

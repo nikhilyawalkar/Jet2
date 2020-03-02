@@ -14,8 +14,23 @@ enum Result <T, E>{
     case error(E)
 }
 
-class NetworkManager {
+class NetworkManager : NSObject {
     
+    private override init() {
+        super.init()
+    }
+    
+    // Create a shared Instance
+    static let _shared = NetworkManager()
+    
+    // Shared Function
+    class func shared() -> NetworkManager{
+        return _shared
+    }
+    
+    func isReachable() -> Bool {
+        NetworkReachabilityManager()!.isReachable
+    }
     
     func fetchEmployeeData(completion: @escaping (Result<[Employee]?, Error?>) -> Void){
         if let employeeListUrl = URL(string: APIConstants.DEV.employeeListUrl) {

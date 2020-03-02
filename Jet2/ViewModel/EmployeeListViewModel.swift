@@ -20,7 +20,6 @@ enum SortingOption {
 class EmployeeListViewModel{
     
     var employees : [EmployeeItem] = []
-    let networkManager = NetworkManager()
     
     var sortingOption : SortingOption = .nameAsc{
         didSet{
@@ -29,19 +28,26 @@ class EmployeeListViewModel{
     }
     
     var dataChanged : (()->Void)?
+    var needAlert : ((_ message : String) -> Void)?
     
     func fetchEmployeeData(){
-        networkManager.fetchEmployeeData { (result) in
-            switch result{
-            case .success(let data):
-                let employeeResponse = data ?? []
-                CoreDataManager._shared.saveEmployeeDataToDatabase(dataForSaving: employeeResponse)
-                self.employees = CoreDataManager._shared.getEmployeeDataFromDB()
-                self.sortData()
-            case.error(let error):
-                print(error!)
+        if NetworkManager._shared.isReachable() {
+            NetworkManager._shared.fetchEmployeeData { (result) in
+                switch result{
+                case .success(let data):
+                    let employeeResponse = data ?? []
+                    CoreDataManager._shared.saveEmployeeDataToDatabase(dataForSaving: employeeResponse)
+                    self.employees = CoreDataManager._shared.getEmployeeDataFromDB()
+                    self.sortData()
+                case.error(let error):
+                    print(error!)
+                }
+                
             }
-            
+        } else {
+            self.needAlert?(AppConstants.networkError)
+            self.employees = CoreDataManager._shared.getEmployeeDataFromDB()
+            self.sortData()
         }
     }
     
