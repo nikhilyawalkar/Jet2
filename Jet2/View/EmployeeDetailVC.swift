@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class EmployeeDetailVC: UIViewController {
 
@@ -24,7 +25,11 @@ class EmployeeDetailVC: UIViewController {
     }
     
     func configureView(){
-        profileImageView.image = viewModel?.profileImage
+        if let url = URL(string: viewModel?.profileUrl ?? ""){
+            profileImageView.af.setImage(withURL: url, cacheKey: viewModel?.profileUrl, placeholderImage: AppConstants.profilePlaceholder)
+        } else {
+            profileImageView.image = AppConstants.profilePlaceholder
+        }
         nameLabel.text = viewModel?.name
         salaryLabel.text = viewModel?.salary
         ageLabel.text = viewModel?.age

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum Result <T, E>{
     case success(T)
@@ -14,6 +15,7 @@ enum Result <T, E>{
 }
 
 class NetworkManager {
+    
     
     func fetchEmployeeData(completion: @escaping (Result<[Employee]?, Error?>) -> Void){
         if let employeeListUrl = URL(string: APIConstants.DEV.employeeListUrl) {

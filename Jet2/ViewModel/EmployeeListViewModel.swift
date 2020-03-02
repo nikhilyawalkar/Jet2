@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AlamofireImage
 
 enum SortingOption {
     case nameAsc
@@ -78,7 +79,11 @@ class EmployeeListViewModel{
     func configureCell(cell : EmployeeListCell, atIndex index : Int){
         let cellModel = EmployeeCellViewModel(model : employees[index])
         cell.nameLabel.text = cellModel.name
-        cell.profileImageView.image = cellModel.profileImage
+        if let url = URL(string: cellModel.profileUrl ?? ""){
+            cell.profileImageView.af.setImage(withURL: url, cacheKey: cellModel.profileUrl, placeholderImage: AppConstants.profilePlaceholder)
+        } else {
+            cell.profileImageView.image = AppConstants.profilePlaceholder
+        }
     }
     
     func getDetailViewModel(forIndex index : Int) -> EmployeeDetailViewModel {
@@ -104,9 +109,4 @@ class EmployeeCellViewModel{
     var profileUrl : String?{
         return model.profileUrl
     }
-    
-    var profileImage : UIImage{
-        return UIImage(named: "profile_icon")!
-    }
-    
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct AppConstants {
     static let appTitle = "Jet2"
@@ -19,4 +20,6 @@ struct AppConstants {
     static let salaryText = "Salary : "
     static let ageText = "Age : "
     static let emptyText = "######"
+    
+    static let profilePlaceholder = UIImage(named: "profile_icon")
 }
