@@ -93,7 +93,11 @@ class CoreDataManager : NSObject{
     }
     
     func saveEmployeeDataToDatabase(dataForSaving : [Employee]){
-        _ = dataForSaving.map{createEmployeeEntity(from: $0)}
+        //Get all the ids present in DB
+        let existedItemIds = getAllPresentIds()
+        
+        //filter out data with check on id present in DB or not
+        _ = dataForSaving.filter{!existedItemIds.contains($0.id ?? "")}.map{createEmployeeEntity(from: $0)}
         self.saveContext()
     }
     
@@ -118,5 +122,9 @@ class CoreDataManager : NSObject{
             print(error)
         }
         return []
+    }
+    
+    private func getAllPresentIds()->[String]{
+        return getEmployeeDataFromDB().map{$0.id ?? ""}
     }
 }

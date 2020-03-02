@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class EmployeeDetailViewModel{
-    let model : Employee
+    let model : EmployeeItem
     
-    init(model : Employee) {
+    init(model : EmployeeItem) {
         self.model = model
     }
     

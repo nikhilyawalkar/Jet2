@@ -18,7 +18,7 @@ enum SortingOption {
 
 class EmployeeListViewModel{
     
-    var employees : [Employee] = []
+    var employees : [EmployeeItem] = []
     let networkManager = NetworkManager()
     
     var sortingOption : SortingOption = .nameAsc{
@@ -33,8 +33,9 @@ class EmployeeListViewModel{
         networkManager.fetchEmployeeData { (result) in
             switch result{
             case .success(let data):
-                self.employees = data ?? []
-                CoreDataManager._shared.saveEmployeeDataToDatabase(dataForSaving: self.employees)
+                let employeeResponse = data ?? []
+                CoreDataManager._shared.saveEmployeeDataToDatabase(dataForSaving: employeeResponse)
+                self.employees = CoreDataManager._shared.getEmployeeDataFromDB()
                 self.sortData()
             case.error(let error):
                 print(error!)
@@ -90,9 +91,9 @@ class EmployeeListViewModel{
 }
 
 class EmployeeCellViewModel{
-    let model : Employee
+    let model : EmployeeItem
     
-    init(model employee : Employee) {
+    init(model employee : EmployeeItem) {
         self.model = employee
     }
     
